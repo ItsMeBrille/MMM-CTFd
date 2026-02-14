@@ -1,0 +1,9 @@
+{
+  "name": "mmm-ctfd",
+  "version": "0.1.0",
+  "description": "CTFd scoreboard module for MagicMirror²",
+  "main": "node_helper.js",
+  "author": "",
+  "license": "MIT",
+  "keywords": ["magicmirror", "ctfd", "scoreboard" ]
+}

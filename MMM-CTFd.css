@@ -1,0 +1,210 @@
+/* MMM-CTF — CTFd Scoreboard for MagicMirror² */
+
+.mmm-ctfd {
+  font-family: "Roboto Condensed", Roboto, Helvetica, Arial, sans-serif;
+  color: #fff;
+  width: 100%;
+}
+
+/* ---- Podium ---- */
+.ctfd-podium {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.ctfd-podium-card {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  padding: 8px 18px;
+  text-align: center;
+  min-width: 120px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ctfd-podium-medal {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.ctfd-podium-name {
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* ---- Table and row styling ---- */
+.ctfd-table {
+  max-width: 720px;
+  width: 100%;
+  margin: 6px auto 0 auto;
+  box-sizing: border-box;
+  padding: 6px;
+}
+
+.ctfd-row {
+  display: grid;
+  grid-template-columns: 1fr 56px 260px;
+  gap: 8px;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.ctfd-cell {
+  padding: 0 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ctfd-name { font-weight: 700; font-size: 0.92em; text-align: left; }
+.ctfd-score { text-align: right; color: rgba(255,255,255,0.85); }
+
+.ctfd-bar { display: block; }
+.ctfd-lb-bar-container {
+  width: 100%;
+  display: flex;
+  height: 18px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.ctfd-lb-bar-seg {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+/* ---- Log panel ---- */
+.ctfd-log-card {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 6px 8px;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.ctfd-log-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+
+.ctfd-log-list li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ctfd-log-time {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9em;
+}
+
+/* ---- Stats 2×2 grid ---- */
+.ctfd-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.ctfd-stat-card {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 8px 6px;
+  text-align: center;
+}
+
+.ctfd-stat-label {
+  font-size: 0.65em;
+  opacity: 0.8;
+  margin-bottom: 2px;
+}
+
+.ctfd-stat-value {
+  font-size: 0.95em;
+  font-weight: 700;
+}
+
+/* ---- Category legend ---- */
+.ctfd-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 4px;
+}
+
+.ctfd-legend-item {
+  font-size: 0.65em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.8;
+}
+
+.ctfd-legend-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Row visuals */
+.ctfd-row {
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.ctfd-row:hover { background: rgba(255,255,255,0.045); }
+.ctfd-row:first-child { margin-top: 2px; }
+.ctfd-row:last-child { border-bottom: none; margin-bottom: 2px; }
+
+.ctfd-lb-bar-seg { transition: width 0.35s ease, opacity 0.25s; }
+.ctfd-lb-bar-seg:not(:first-child) { margin-left: 1px; }
+
+@media (max-width: 600px) {
+  .ctfd-row { grid-template-columns: 1fr 44px 140px; }
+  .ctfd-name { font-size: 0.92em; }
+}
+
+@media (max-width: 380px) {
+  .ctfd-row { grid-template-columns: 24px 1fr 40px 110px; }
+  .ctfd-lb-bar-container { height: 14px; }
+}
+
+/* Highlighted/forced user */
+.ctfd-highlight .ctfd-name strong { font-weight: 900; }
+.ctfd-muted-rank {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.85em;
+  margin-right: 6px;
+}
+
+/* Stat boxes */
+.ctfd-stat-boxes {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.ctfd-stat-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 8px 12px;
+  border-radius: 8px;
+  min-width: 120px;
+  text-align: center;
+}
+.ctfd-stat-box-label { font-size: 0.7em; opacity: 0.85; margin-bottom: 4px; }
+.ctfd-stat-box-value { font-weight: 800; font-size: 1.05em; }
+
+.ctfd-table.no-bars .ctfd-row { grid-template-columns: 1fr 56px; }
+.ctfd-table.no-bars .ctfd-bar { display: none; }
