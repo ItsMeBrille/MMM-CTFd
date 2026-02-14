@@ -17,7 +17,7 @@ Screenshot will be published later:
 
 ## Configuration
 
-Add the module to the `modules` array in your MagicMirror `config/config.js`:
+Add the module in your MagicMirror `config/config.js`:
 
 ```javascript
 {
@@ -25,13 +25,12 @@ Add the module to the `modules` array in your MagicMirror `config/config.js`:
 	position: "top_right",
 	config: {
     CTFd_URL: "https://demo.ctfd.io", // CTFd instance URL
-    CTFd_token: "",                   // CTFd API token
-    updateInterval: 180,              // seconds between refreshes (3 minutes)
+    CTFd_token: "ctfd_040291e4d890af14feddde489c6e5479b7dd759f3c4addd2594bb5258a8b25ff", // CTFd API token
     showTop: 10,                      // max leaderboard rows
     showCategories: true,             // show stacked category bars
     showFirstBloods: false,           // show first blood indicator
     showStats: false,                 // show the three stat boxes
-    username: "",                     // username to always include on leaderboard
+    username: "Dummy",                // username to always include on leaderboard
   }
 }
 ```

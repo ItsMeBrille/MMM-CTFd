@@ -1,7 +1,7 @@
 Module.register("MMM-CTFd", {
   defaults: {
     CTFd_URL: "https://demo.ctfd.io", // CTFd instance URL
-    CTFd_token: "",                   // CTFd API token
+    CTFd_token: "ctfd_040291e4d890af14feddde489c6e5479b7dd759f3c4addd2594bb5258a8b25ff",                   // CTFd API token
     updateInterval: 180,              // seconds between refreshes (3 minutes)
     showTop: 10,                      // max leaderboard rows
     showCategories: true,             // show stacked category bars
